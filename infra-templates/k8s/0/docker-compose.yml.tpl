@@ -32,7 +32,7 @@ kubelet:
         - --cluster-domain=cluster.local
         - --network-plugin=cni
         - --cni-conf-dir=/etc/cni/managed.d
-        - --feature-gates="Accelerators=true"
+        - --feature-gates=Accelerators=true
         {{- if and (ne .Values.REGISTRY "") (ne .Values.POD_INFRA_CONTAINER_IMAGE "") }}
         - --pod-infra-container-image=${REGISTRY}/${POD_INFRA_CONTAINER_IMAGE}
         {{- else if (ne .Values.POD_INFRA_CONTAINER_IMAGE "") }}
@@ -97,7 +97,7 @@ kubelet-unschedulable:
         - --cluster-domain=cluster.local
         - --network-plugin=cni
         - --cni-conf-dir=/etc/cni/managed.d
-        - --feature-gates="Accelerators=true"
+        - --feature-gates=Accelerators=true
         {{- if and (ne .Values.REGISTRY "") (ne .Values.POD_INFRA_CONTAINER_IMAGE "") }}
         - --pod-infra-container-image=${REGISTRY}/${POD_INFRA_CONTAINER_IMAGE}
         {{- else if (ne .Values.POD_INFRA_CONTAINER_IMAGE "") }}
