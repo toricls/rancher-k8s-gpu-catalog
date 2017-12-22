@@ -1,0 +1,3 @@
+name: Kubernetes
+version: v1.8.5-gpu-rancher3
+category: Orchestration
