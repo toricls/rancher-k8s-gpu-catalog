@@ -1,8 +1,9 @@
 .catalog:
   name: Kubernetes
-  version: v1.8.5-rancher3
+  version: v1.8.3-gpu-rancher3
   description: Rancher Kubernetes service
-  minimum_rancher_version: v1.6.13-rc1
+  minimum_rancher_version: v1.6.11-rc1
+  maximum_rancher_version: v1.6.12
   questions:
   - variable: CONSTRAINT_TYPE
     label: Plane Isolation
@@ -156,18 +157,6 @@
     description: This is the IP address that will be added as a SAN to the TLS certificate for kubernetes api, this must matches the IP of the kubernetes master service which is the first IP of the Service Cluster IP CIDR.
     required: true
     default: "10.43.0.1"
-    type: string
-  - variable: DASHBOARD_CPU_LIMIT
-    label: Kubernetes Dashboard CPU limit
-    description: This is the CPU allocated for the Dashboard pod. The same value is used for resource request and resource limit.
-    required: false
-    default: 100m
-    type: string
-  - variable: DASHBOARD_MEMORY_LIMIT
-    label: Kubernetes Dashboard memory limit
-    description: This is the memory allocated for the Dashboard pod. The same value is used for resource request and resource limit. If you have a large number of pods, you should increase this over the default value.
-    required: false
-    default: 300Mi
     type: string
   - variable: INFLUXDB_HOST_PATH
     label: InfluxDB Host Path
